@@ -51,13 +51,6 @@ h1 {
     color: #e0e0e0;
 }
 
-.subtitle {
-    display: block;
-    font-size: 0.6em; /* h1の60%のサイズ */
-    color: #e0e0e0;
-    margin-top: 5px;
-}
-
 .hero-image {
     text-align: center;
     margin-top: 20px;
