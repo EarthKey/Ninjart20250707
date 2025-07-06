@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninjart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <header>
+        <h1>Ninjart</h1>
+    </header>
+    <main>
+        <div class="hero-image">
+            <img src="images/20250707-Ninjart.png" alt="Ninjart Illustration">
+        </div>
+        <div class="container">
+            <div class="folder-container">
+                <!-- Character folders will be injected here by script -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const characters = {
+            "002 Sakuya": ["00040-1706416042.png", "00041-1706416043.png", "00042-2786093897_cleanup.png", "00043-2786093898.png", "00044-3241242599_cleanup.png", "00045-3241242600_cleanup.png"],
+            "006 Oto": ["00145-2109207395.png", "00147-2109207397.png", "00148-2109207398.png", "00149-2203038765.png", "00150-2203038766.png", "00151-2203038767.png", "00152-2203038768.png"],
+            "008 Nagisa": ["00046-670288100.png", "00047-670288101.png", "00048-3105467406_cleanup.png", "00049-3105467407.png", "00050-4261913526.png", "00051-4261913527.png"],
+            "009 Anne": ["00052-7421442_cleanup.png", "00053-7421443.png", "00054-2842262318.png", "00055-1709254620_cleanup.png", "00056-1709254621.png", "00057-1709254622.png"],
+            "012 Torika": ["00060-2804171326.png", "00062-3969370473.png", "00063-3969370474.png", "00065-2611045703.png", "00067-2538953462.png", "00068-2538953463.png"],
+            "014 Hayate": ["00186-903308072.png", "00187-903308073.png", "00188-3298112657.png", "00188-4284273182.png", "00189-4284273184.png", "00190-3298112659.png", "00192-2854113261.png", "00194-2854113263.png"],
+            "015 Uka": ["00084-4107334159.png", "00085-1629252211.png", "00086-1629252212.png", "00087-2191270075.png", "00088-2191270076_cleanup.png", "00089-2191270077.png", "00090-2191270078.png"],
+            "017 Yui": ["00069-4210797399.png", "00070-4210797400.png", "00071-4210797401.png", "00072-1476605593.png", "00073-1476605594.png", "00074-1476605595.png", "00075-1476605596.png"],
+            "019 Rei": ["00076-2735696036.png", "00077-2735696037.png", "00079-804891953.png", "00080-1612123687.png", "00081-1069689589.png", "00082-1069689590_cleanup.png"],
+            "022 Janome": ["00091-38948780.png", "00092-38948781.png", "00093-38948782.png", "00094-38948783.png", "00095-3158063659.png", "00097-3513195219.png", "00099-3513195221.png", "00100-3513195222.png"],
+            "023 Benten": ["00101-1227934963.png", "00102-1688774807.png", "00102-1688774808.png", "00104-1227934966.png", "00105-1219939045.png", "00106-1126862017.png", "00107-1126862018.png", "00108-1126862019.png"],
+            "024 Karma": ["00185 (1).png", "00185 (10).png", "00185 (2).png", "00185 (3).png", "00185 (4).png", "00185 (5).png", "00185 (6).png", "00185 (7).png", "00185 (8).png", "00185 (9)_cleanup.png"],
+            "026 Nemu": ["00109-983550168_cleanup.png", "00110-983550169.png", "00112-4003213044.png", "00113-2442175654.png", "00114-2442175655.png", "00115-1888374121.png", "00116-1888374122.png", "00117-1888374123.png"],
+            "027 Karura": ["00034-3101591296.png", "00035-3101591297.png", "00036-2556841901.png", "00037-2556841902.png", "00038-1617231419.png", "00039-1617231420_cleanup.png"],
+            "028 Xiaolan": ["00120-3258218683_cleanup.png", "00121-401541610_cleanup.png", "00123-401541612_cleanup.png", "00124-3238231390_cleanup.png", "00125-3238231391_cleanup.png", "00126-33152887.png", "00127-33152888.png", "00128-33152889.png"],
+            "029 Aum": ["00177-3282767768.png", "00178-3282767769.png", "00179-3282767770.png", "00180-3282767771.png", "00181-2148590513.png", "00182-2148590514.png", "00183-2148590515.png", "00184-2148590516.png"],
+            "031 Shion": ["00129-3051503827.png", "00130-3051503828.png", "00131-3051503829.png", "00132-3331853525.png", "00134-3331853527.png", "00135-3331853528_cleanup.png"],
+            "032 Seori": ["00136-3559238789_cleanup.png", "00137-3559238790_cleanup.png", "00138-3372628743.png", "00139-3372628744.png", "00140-63303719.png", "00141-3547535407.png", "00142-3547535408.png", "00144-3547535410.png"],
+            "033 Quon": ["00153-3162950691.png", "00154-3162950692.png", "00155-3162950693.png", "00156-3162950694.png", "00157-1673976907.png", "00159-1673976909.png", "00160-1673976910.png"],
+            "036 Oen": ["00162-3423151003.png", "00163-3423151004.png", "00164-3423151005_cleanup.png", "00165-913537500.png", "00166-913537501.png", "00167-913537502_cleanup.png", "00168-913537503.png"],
+            "037 Izuna": ["00169-385585292.png", "00171-385585294.png", "00172-385585295.png", "00173-1494158329.png", "00174-1494158330.png", "00175-1494158331.png", "00176-1494158332.png"]
+        };
+
+        const container = document.querySelector('.folder-container');
+
+        for (const charName in characters) {
+            const images = characters[charName];
+            const randomImage = images[Math.floor(Math.random() * images.length)];
+
+            const folder = document.createElement('div');
+            folder.className = 'folder';
+
+            const link = document.createElement('a');
+            link.href = `${charName}/index.html`;
+
+            const img = document.createElement('img');
+            img.src = `${charName}/${randomImage}`;
+            link.appendChild(img);
+
+            const title = document.createElement('h2');
+            title.textContent = `🎋 ${charName}`;
+            link.appendChild(title);
+
+            folder.appendChild(link);
+            container.appendChild(folder);
+        }
+    </script>
+</body>
+</html>

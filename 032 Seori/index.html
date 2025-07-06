@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>032 Seori - Ninjart</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <header>
+        <h1><a href="../index.html">Ninjart</a></h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>032 Seori</h2>
+            <div class="gallery">
+                <img src="00136-3559238789_cleanup.png" onclick="openModal(this.src)">
+                <img src="00137-3559238790_cleanup.png" onclick="openModal(this.src)">
+                <img src="00138-3372628743.png" onclick="openModal(this.src)">
+                <img src="00139-3372628744.png" onclick="openModal(this.src)">
+                <img src="00140-63303719.png" onclick="openModal(this.src)">
+                <img src="00141-3547535407.png" onclick="openModal(this.src)">
+                <img src="00142-3547535408.png" onclick="openModal(this.src)">
+                <img src="00144-3547535410.png" onclick="openModal(this.src)">
+            </div>
+        </div>
+    </main>
+
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        const modal = document.getElementById('myModal');
+        const modalImg = document.getElementById('modalImg');
+        function openModal(src) {
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+        function closeModal() {
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
