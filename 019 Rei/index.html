@@ -16,17 +16,22 @@
         <div class="container">
             <h2>019 Rei</h2>
             <div class="gallery">
-                <img src="00076-2735696036.png" onclick="openModal(this.src)">
-                <img src="00077-2735696037.png" onclick="openModal(this.src)">
-                <img src="00079-804891953.png" onclick="openModal(this.src)">
-                <img src="00080-1612123687.png" onclick="openModal(this.src)">
-                <img src="00081-1069689589.png" onclick="openModal(this.src)">
-                <img src="00082-1069689590_cleanup.png" onclick="openModal(this.src)">
+                <img src="00076-2735696036.png">
+                <img src="00077-2735696037.png">
+                <img src="00079-804891953.png">
+                <img src="00080-1612123687.png">
+                <img src="00081-1069689589.png">
+                <img src="00082-1069689590_cleanup.png">
             </div>
         </div>
     </main>
 
-    <div id="myModal" class="modal" onclick="closeModal()">
+    <footer>
+        <p>制作者: アースキー</p>
+        <a href="https://profu.link/u/earthkey871196" target="_blank" rel="noopener noreferrer" class="profile-button">アースキーのプロフィール</a>
+    </footer>
+
+    <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImg">
     </div>
@@ -34,12 +39,23 @@
     <script>
         const modal = document.getElementById('myModal');
         const modalImg = document.getElementById('modalImg');
-        function openModal(src) {
-            modal.style.display = "block";
-            modalImg.src = src;
-        }
-        function closeModal() {
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        closeBtn.onclick = function() {
             modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     </script>
 </body>

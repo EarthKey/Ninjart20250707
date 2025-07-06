@@ -16,18 +16,23 @@
         <div class="container">
             <h2>037 Izuna</h2>
             <div class="gallery">
-                <img src="00169-385585292.png" onclick="openModal(this.src)">
-                <img src="00171-385585294.png" onclick="openModal(this.src)">
-                <img src="00172-385585295.png" onclick="openModal(this.src)">
-                <img src="00173-1494158329.png" onclick="openModal(this.src)">
-                <img src="00174-1494158330.png" onclick="openModal(this.src)">
-                <img src="00175-1494158331.png" onclick="openModal(this.src)">
-                <img src="00176-1494158332.png" onclick="openModal(this.src)">
+                <img src="00169-385585292.png">
+                <img src="00171-385585294.png">
+                <img src="00172-385585295.png">
+                <img src="00173-1494158329.png">
+                <img src="00174-1494158330.png">
+                <img src="00175-1494158331.png">
+                <img src="00176-1494158332.png">
             </div>
         </div>
     </main>
 
-    <div id="myModal" class="modal" onclick="closeModal()">
+    <footer>
+        <p>制作者: アースキー</p>
+        <a href="https://profu.link/u/earthkey871196" target="_blank" rel="noopener noreferrer" class="profile-button">アースキーのプロフィール</a>
+    </footer>
+
+    <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImg">
     </div>
@@ -35,12 +40,23 @@
     <script>
         const modal = document.getElementById('myModal');
         const modalImg = document.getElementById('modalImg');
-        function openModal(src) {
-            modal.style.display = "block";
-            modalImg.src = src;
-        }
-        function closeModal() {
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        closeBtn.onclick = function() {
             modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     </script>
 </body>
