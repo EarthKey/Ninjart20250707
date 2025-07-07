@@ -1,1 +1,1 @@
-Re-add subtitle to site content and adjust styling
+Add subtitle back to site content

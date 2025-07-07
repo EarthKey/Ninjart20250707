@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiro - Ninjart</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <header>
+        <h1><a href="../index.html">Ninjart</a></h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Hiro</h2>
+            <div class="gallery">
+                <img src="00206-3822851920_cleanup.png">
+                <img src="00206-3822851920.png">
+                <img src="00207-3822851921.png">
+                <img src="00208-2942161203_cleanup.png">
+                <img src="00208-2942161203.png">
+                <img src="00209-2942161204.png">
+                <img src="00210-2942161205.png">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>制作者: アースキー</p>
+        <a href="https://profu.link/u/earthkey871196" target="_blank" rel="noopener noreferrer" class="profile-button">アースキーのプロフィール</a>
+    </footer>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        const modal = document.getElementById('myModal');
+        const modalImg = document.getElementById('modalImg');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
